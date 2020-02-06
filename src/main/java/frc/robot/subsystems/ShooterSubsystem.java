@@ -40,9 +40,13 @@ public class ShooterSubsystem extends Subsystem {
   public void startShooter () {
     setShooterSpeed(RobotConstants.SHOOTER_SPEED);
   }
-
+  
   public void stopShooter () {
     setShooterSpeed(0);
+  }
+
+  public void updateSmartdashboard () {
+    
   }
 
 }

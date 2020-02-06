@@ -7,8 +7,10 @@
 
 package frc.robot.subsystems;
 
+import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.RobotConstants;
 import frc.robot.RobotMap;
 import frc.robot.commands.IntakeDefaultCommand;
@@ -18,10 +20,15 @@ public class IntakeSubsystem extends Subsystem {
   Victor lowIntakeMotor;
   Victor highIntakeMotor;
 
+  DigitalInput intakeSensor;
+
   public IntakeSubsystem () {
 
     lowIntakeMotor = new Victor(RobotMap.LOW_INTAKE_MOTOR_PORT);
+
     highIntakeMotor = new Victor(RobotMap.HIGH_INTAKE_MOTOR_PORT);
+
+    intakeSensor = new DigitalInput(RobotMap.INTAKE_SENSOR_PORT);
 
   }
 
@@ -60,6 +67,14 @@ public class IntakeSubsystem extends Subsystem {
 
   public void stopHighIntake() {
     setHighIntakeSpeed(0);
+  }
+
+  public boolean getIntakeSensor() {
+    return !intakeSensor.get();
+  }
+
+  public void updateSmartdashboard () {
+    SmartDashboard.putBoolean("Intake Sensor", getIntakeSensor());
   }
 
 }

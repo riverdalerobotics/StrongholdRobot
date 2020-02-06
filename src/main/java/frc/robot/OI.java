@@ -10,6 +10,7 @@ package frc.robot;
 import edu.wpi.first.wpilibj.GenericHID.Hand;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import frc.robot.commands.IntakeCommand;
 import frc.robot.commands.IntakeShootCommandGroup;
 import frc.robot.commands.ShootCommandGroup;
 
@@ -23,7 +24,10 @@ public class OI {
 
   /* Button 2 --> The B Button */
   JoystickButton autoShoot;
+  /* Button 3 --> The X Button */
   JoystickButton autoIntakeShoot;
+  /* Button 4 --> The Y Button */
+  JoystickButton intake;
 
   public OI () {
     autoShoot = new JoystickButton(controller, 2);
@@ -31,22 +35,25 @@ public class OI {
 
     autoIntakeShoot = new JoystickButton(controller, 3);
     autoIntakeShoot.whenPressed(new IntakeShootCommandGroup());
+
+    intake = new JoystickButton(controller, 4);
+    intake.whenPressed(new IntakeCommand(RobotConstants.INTAKE_DURATION));
   }
 
   public double getSpeed () {
-    return controller.getY(Hand.kLeft);
+    return -controller.getY(Hand.kLeft); 
   } 
 
   public double getTurn () {
     return controller.getX(Hand.kRight);
   }
 
-  public boolean pullIntake () {
-    return controller.getBumper(Hand.kRight);
+  public boolean pullIntake () { 
+    return controller.getBumper(Hand.kLeft);
   }
 
   public boolean pushIntake () {
-    return controller.getBumper(Hand.kLeft);
+    return controller.getBumper(Hand.kRight);
   }
 
   public boolean startShooter () {

@@ -45,6 +45,9 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void robotPeriodic() {
+    m_chassisSubsystem.updateSmartdashboard();
+    m_intakeSubsystem.updateSmartdashboard();
+    m_shooterSubsystem.updateSmartdashboard();
   }
 
   /**

@@ -1,0 +1,9 @@
+[
+  {
+    "artifact": "frcJava (in project StrongholdRobot)",
+    "target": "roborio",
+    "debugfile": "frcJava_roborio.debugconfig",
+    "project": "StrongholdRobot",
+    "language": "java"
+  }
+]

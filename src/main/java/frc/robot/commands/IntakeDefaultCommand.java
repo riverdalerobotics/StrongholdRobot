@@ -24,8 +24,8 @@ public class IntakeDefaultCommand extends Command {
   @Override
   protected void execute() {
 
-    boolean pullIntake = Robot.m_oi.pullIntake();
-    boolean pushIntake = Robot.m_oi.pullIntake();
+    boolean pushIntake = Robot.m_oi.pushIntake();
+    boolean pullIntake = Robot.m_oi.pullIntake(); 
 
     boolean feedShooter = Robot.m_oi.feedShooter();
     

@@ -16,6 +16,6 @@ public class ShootCommandGroup extends CommandGroup {
    */
   public ShootCommandGroup() {
     addParallel(new RevShooterCommand(RobotConstants.REV_TIME));
-    addSequential(new FeedShooterCommand(RobotConstants.REV_TIME, RobotConstants.DELAY_PERCENT));
+    addSequential(new FeedShooterCommand(RobotConstants.REV_TIME));
   }
 }

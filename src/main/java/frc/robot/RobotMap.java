@@ -15,13 +15,19 @@ package frc.robot;
  */
 public class RobotMap {
   
-  public final static int LEFT_MOTOR_PORT = 1;
-  public final static int RIGHT_MOTOR_PORT = 2;
+  public final static int LEFT_MOTOR_PORT = 0;
+  public final static int RIGHT_MOTOR_PORT = 1;
   
+  public final static int HIGH_INTAKE_MOTOR_PORT = 2;
   public final static int LOW_INTAKE_MOTOR_PORT = 3;
-  public final static int HIGH_INTAKE_MOTOR_PORT = 4;
   
-  public final static int SHOOTER_MOTOR_PORT = 5;
-  
+  public final static int INTAKE_SENSOR_PORT = 0;
+
+  public final static int SHOOTER_MOTOR_PORT = 4;
+
+  public final static int RIGHT_ENCODER_ONE = 4;
+  public final static int RIGHT_ENCODER_TWO = 5;
+  public final static int LEFT_ENCODER_ONE = 6;
+  public final static int LEFT_ENCODER_TWO = 7;
 
 }
